@@ -1,0 +1,21 @@
+{
+  "SoundBoard": [
+    {
+      "BoardName": "Main",
+      "Color": "#FF0000",
+      "Button": [
+        {
+          "Name": "Test Sound",
+          "Icon": "",
+          "Sound": [
+            {
+              "Name": "Erick Test",
+              "Sound": "Erick Feiling - Test Sound",
+              "Loop": false
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
