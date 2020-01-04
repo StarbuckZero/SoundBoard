@@ -1,14 +1,37 @@
 {
   "SoundBoard": [
     {
-      "BoardName": "Main",
-      "Color": "#FF0000",
+      "BoardName": "TestBoard 1",
+      "TextColor": "0x000000",
+      "ButtonColor": "0xFF0000",
       "Button": [
         {
           "Name": "Test Sound",
           "Icon": "",
           "Sound": [
             {
+              "Name": "Erick Test",
+              "Sound": "Erick Feiling - Test Sound",
+              "Loop": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "BoardName": "TestBoard 2",
+      "TextColor": "0xFFFFFF",
+      "ButtonColor": "0xFF0000",
+      "Button": [
+        {
+          "Name": "Test Sound",
+          "TextColor": "0x000000",
+          "ButtonColor": "0x00FF00",
+          "Icon": "",
+          "Sound": [
+            {
+              "TextColor": "0x000000",
+              "ButtonColor": "0x0000FF",
               "Name": "Erick Test",
               "Sound": "Erick Feiling - Test Sound",
               "Loop": false
