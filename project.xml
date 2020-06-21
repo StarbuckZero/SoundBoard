@@ -17,7 +17,7 @@
 	<source path="src" />
 	
 	<haxelib name="openfl" />
-	<haxelib name="hxcpp-debug-server" />
+	<haxelib name="hxcpp-debug-server" /> 
 	
 	<!-- assets -->
 	<!--<icon path="assets/openfl.svg" />-->

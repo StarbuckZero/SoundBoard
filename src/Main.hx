@@ -249,6 +249,9 @@ class Main extends Sprite {
 		var soundButton:SoundButton = cast(event.currentTarget, SoundButton);
 
 		// Come up with way to cache sound files after being loaded.
+		if(_soundManager.getStatus(soundButton.soundName).playing)
+		_soundManager.stopSound(soundButton.soundName);
+			else
 		_soundManager.playSound(soundButton.soundName);
 	}
 }
