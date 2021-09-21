@@ -13,10 +13,11 @@
 	<window orientation="landscape" vsync="false" antialiasing="0" if="cpp" />
 	
 	<!-- classpath, haxe libs --> 
-	<source path="../_FRAMEWORK/CHAOS_UI_HX" />
 	<source path="src" />
 	
 	<haxelib name="openfl" />
+	<haxelib name="actuate" />
+	<haxelib name="chaos-framework" />
 	<haxelib name="hxcpp-debug-server" /> 
 	
 	<!-- assets -->

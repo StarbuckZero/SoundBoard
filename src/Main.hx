@@ -209,6 +209,10 @@ class Main extends Sprite {
 
 			var textColor : Int = (Reflect.hasField(buttonSoundInfoList[i],"TextColor")) ?  Std.parseInt(Reflect.field(buttonSoundInfoList[i],"TextColor")) : defaultTextColor;
 			var buttonColor : Int = (Reflect.hasField(buttonSoundInfoList[i],"ButtonColor")) ?  Std.parseInt(Reflect.field(buttonSoundInfoList[i],"ButtonColor")) : defaultButtonColor;
+			var isMusic : Bool = false;
+
+			if(Reflect.hasField(buttonSoundInfoList[i], "Music"))
+				isMusic = Reflect.field(buttonSoundInfoList[i], "Music");
 
 			var button:SoundButton = new SoundButton({
 				"Label": {"textColor": textColor, "size": BUTTON_FONT_SIZE},
@@ -216,7 +220,7 @@ class Main extends Sprite {
 				"defaultColor":buttonColor,
 				"Loop": Reflect.field(buttonSoundInfoList[i], "Loop"),
 				"SoundName": Reflect.field(buttonSoundInfoList[i], "Sound"),
-				"Music": Reflect.hasField(buttonSoundInfoList[i], "Music"),
+				"Music": isMusic,
 				"text": Reflect.field(buttonSoundInfoList[i], "Name"),
 				"width": 200,
 				"height": 80
@@ -248,10 +252,17 @@ class Main extends Sprite {
 	private function onPlaySoundbuttonClick(event:MouseEvent):Void {
 		var soundButton:SoundButton = cast(event.currentTarget, SoundButton);
 
-		// Come up with way to cache sound files after being loaded.
-		if(_soundManager.getStatus(soundButton.soundName).playing)
-		_soundManager.stopSound(soundButton.soundName);
+		// Stop if music and keep play sound again if not
+		if(soundButton.music)
+		{
+			if(_soundManager.getStatus(soundButton.soundName).playing)
+				_soundManager.stopSound(soundButton.soundName);
 			else
-		_soundManager.playSound(soundButton.soundName);
+				_soundManager.playSound(soundButton.soundName);				
+		}
+		else
+		{
+			_soundManager.playSound(soundButton.soundName);			
+		}
 	}
 }

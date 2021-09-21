@@ -53,20 +53,24 @@ class SoundTabPane extends TabPane
 			button.y = 0;
 
 			// Set TextFormat based on UIStyleManager
-			button.textBold = UIStyleManager.TABPANE_BUTTON_TEXT_BOLD;
-			button.textItalic = UIStyleManager.TABPANE_BUTTON_TEXT_ITALIC;
+			if(UIStyleManager.hasStyle(UIStyleManager.TABPANE_BUTTON_TEXT_BOLD))
+				button.textBold = UIStyleManager.getStyle(UIStyleManager.TABPANE_BUTTON_TEXT_BOLD);
 
-			if ( -1 != UIStyleManager.TABPANE_BUTTON_TEXT_SIZE)
-				button.textSize = UIStyleManager.TABPANE_BUTTON_TEXT_SIZE;
+			if(UIStyleManager.hasStyle(UIStyleManager.TABPANE_BUTTON_TEXT_ITALIC))
+			 button.textItalic = UIStyleManager.getStyle(UIStyleManager.TABPANE_BUTTON_TEXT_ITALIC);
 
-			if ("" != UIStyleManager.TABPANE_BUTTON_TEXT_FONT)
-				button.textFont = UIStyleManager.TABPANE_BUTTON_TEXT_FONT;
 
-			if (null != UIStyleManager.TABPANE_BUTTON_TEXT_EMBED)
-				button.label.setEmbedFont(UIStyleManager.TABPANE_BUTTON_TEXT_EMBED);
+			if(UIStyleManager.hasStyle(UIStyleManager.TABPANE_BUTTON_TEXT_SIZE))
+			 	button.textSize = UIStyleManager.getStyle(UIStyleManager.TABPANE_BUTTON_TEXT_ITALIC);
 
-			if ( -1 != UIStyleManager.TABPANE_BUTTON_TINT_ALPHA)
-				button.label.borderAlpha = UIStyleManager.TABPANE_BUTTON_TINT_ALPHA;
+			if(UIStyleManager.hasStyle(UIStyleManager.TABPANE_BUTTON_TEXT_FONT))
+				button.textFont = UIStyleManager.getStyle(UIStyleManager.TABPANE_BUTTON_TEXT_FONT);
+
+			if(UIStyleManager.hasStyle(UIStyleManager.TABPANE_BUTTON_TEXT_EMBED))
+				button.label.setEmbedFont(UIStyleManager.getStyle(UIStyleManager.TABPANE_BUTTON_TEXT_EMBED));
+
+			if(UIStyleManager.hasStyle(UIStyleManager.TABPANE_BUTTON_TINT_ALPHA))
+				button.borderAlpha = UIStyleManager.getStyle(UIStyleManager.TABPANE_BUTTON_TINT_ALPHA);
 				
 			button.draw();
 
